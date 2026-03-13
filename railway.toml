@@ -2,7 +2,7 @@
 builder = "nixpacks"
 
 [deploy]
-startCommand = "cd backend && gunicorn carbonwise.wsgi --bind 0.0.0.0:$PORT --workers 2"
+startCommand = "bash start.sh"
 healthcheckPath = "/api/health/"
 healthcheckTimeout = 30
 restartPolicyType = "on_failure"
