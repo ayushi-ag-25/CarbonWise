@@ -12,9 +12,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # ── SECURITY ─────────────────────────────────────
 # IMPORTANT: Change this before deployment!
-SECRET_KEY = 'django-carbonwise-hackathon-secret-key-change-in-production'
+#SECRET_KEY = 'django-carbonwise-hackathon-secret-key-change-in-production'
 
-DEBUG = True  # Set to False in production
+#DEBUG = True  # Set to False in production
+
+DEBUG = os.environ.get('DEBUG', 'False') == 'True'
+SECRET_KEY = os.environ.get('SECRET_KEY', 'fallback-local-key')
 
 ALLOWED_HOSTS = ['*']  # Restrict in production
 
